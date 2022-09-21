@@ -1,16 +1,15 @@
 
-/*Este código lo hice en el IDE Eclipse, en donde me apoye de algunos tutoriales 
+/*Este cÃ³digo lo hice en el IDE Eclipse, en donde me apoye de algunos tutoriales 
 para poder resolverlo de una mejor manera*/
 
 package elJuegoDeLaVida;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Calendar;
 import javax.swing.*;
 
 public class InicioJuego extends JApplet {
-	// Número de filas y columnas que tendrá el tablero
+	// NÃºmero de filas y columnas que tendrÃ¡ el tablero
 	private int filas = 10;
 	private int columnas = 10;
 	private boolean boton;
@@ -25,7 +24,7 @@ public class InicioJuego extends JApplet {
 	private GridLayout contorno = new GridLayout();
 	private JButton siguienteGen = new JButton();
 
-	// Aparezca una ventana que contendrá el tablero de 10 x 10
+	// Aparezca una ventana que contendrÃ¡ el tablero de 10 x 10
 	public static void main(String[] args) {
 		InicioJuego st = new InicioJuego();
 		// applet.isStandalone = true;
@@ -51,9 +50,9 @@ public class InicioJuego extends JApplet {
 			ld2.setLayout(contorno);
 			contorno.setColumns(columnas);
 			contorno.setRows(filas);
-			// aparezca el botón para pasar a la siguiente generación
+			// aparezca el botÃ³n para pasar a la siguiente generaciÃ³n
 			bSiguienteG.setBounds(new Rectangle(19, 268, 384, 70));
-			siguienteGen.setText("Siguiente generación");
+			siguienteGen.setText("Siguiente generaciÃ³n");
 			siguienteGen.addKeyListener(new KeyListener() {
 
 				@Override
@@ -107,7 +106,7 @@ public class InicioJuego extends JApplet {
 								else
 									((JLabel) cel).setBackground(Color.red);
 							}
-							// Cuando cambie de generación
+							// Cuando cambie de generaciÃ³n
 							boolean[][] areaD = new boolean[filas][columnas];
 							for (int i = 0; i < areaD.length; i++) {
 								for (int j = 0; j < areaD[0].length; j++) {
@@ -151,7 +150,7 @@ public class InicioJuego extends JApplet {
 	}
 
 	private void Generaciones() {
-		// pase a la siguiente generacón y marque las celulas que sobreviven
+		// pase a la siguiente generacÃ³n y marque las celulas que sobreviven
 		ct.sigGen();
 		boolean[][] area2 = ct.getArea();
 		for (int i = 0; i < area2.length; i++) {
