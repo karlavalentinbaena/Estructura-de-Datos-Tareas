@@ -15,6 +15,16 @@ public class Laberinto {
 	public static void main(String[] args) {
 
 		System.out.println("El laberinto es:");
+		
+		ArrayList<ArrayList<String>> OutterArray = new ArrayList();
+	String[] contorno;
+	String[] TamLis;
+	Arreglo2D TableroLab;
+	Arreglo2D cas = new PilaADT();
+
+	public Laberinto(File Arch) {
+		int fil;
+		int col;
 		try {
 			BufferedReader Lab = new BufferedReader(new FileReader(
 					"C:\\Users\\hp\\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\\Documents\\KARLA\\plantillas\\plantillaL.csv"));
@@ -26,7 +36,10 @@ public class Laberinto {
 					System.out.print(partes[i] + "    ");
 				}
 				System.out.println("\n");
-			}
+			}		
+			fil = Integer.parseInt(OutterArray.get(0).get(0));
+			col = Integer.parseInt(OutterArray.get(1).get(0));
+			TableroLab = new Arreglo2D(fil, col);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -34,37 +47,7 @@ public class Laberinto {
 
 	}
 
-	ArrayList<ArrayList<String>> OutterArray = new ArrayList();
-	String[] Lineas;
-	String[] TamLis;
-	Arreglo2D TableroLab;
-	Arreglo2D cas = new PilaADT();
-
-	public Laberinto(File Arch) {
-		int fil;
-		int col;
-		try {
-			Path Ruta = Arch.toPath();
-			BufferedReader Lector = Files.newBufferedReader(Ruta);
-			String Leido;
-			while ((Leido = Lector.readLine()) != null) {
-				Lineas = Leido.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
-				ArrayList<String> InnerArray = new ArrayList();
-				for (String datos : Lineas) {
-					InnerArray.add(datos);
-				}
-				OutterArray.add(InnerArray);
-			}
-
-			fil = Integer.parseInt(OutterArray.get(0).get(0));
-			col = Integer.parseInt(OutterArray.get(1).get(0));
-			TableroLab = new Arreglo2D(fil, col);
-
-		} catch (IOException ex) {
-		}
-	}
-
-	public void empezar(ArrayList<ArrayList<String>> OutterArray) {
+	public void inc(ArrayList<ArrayList<String>> OutterArray) {
 		for (int Fil = 0; Fil < Integer.parseInt(OutterArray.get(0).get(0)); Fil++) {
 			for (int Col = 0; Col < Integer.parseInt(OutterArray.get(1).get(0)); Col++) {
 				if (OutterArray.get(Fil + 2).get(Col).equals("E")) {
@@ -81,7 +64,7 @@ public class Laberinto {
 		int reg = 0;
 	
 		if (reg != 1) {
-			if (TableroLab.getElemento(x - 1, y) != "#") {
+			if (TableroLab.getElemento(x - 1, y) != "1") {
 				if (TableroLab.getElemento(x - 1, y) != "*") {
 					if (TableroLab.getElemento(x - 1, y) != "E" && TableroLab.getElemento(x - 1, y) != "S") {
 						cas.push("," + y);
@@ -101,16 +84,13 @@ public class Laberinto {
 
 		// Ir hacia abajo
 		if (reg != 1 && reg != 2 && reg != 3) {
-			if (TableroLab.getElemento(x + 1, y) != "#") {
-				// if (TableroLab.getElemento(x + 1, y) != null) {
+			if (TableroLab.getElemento(x + 1, y) != "1") {
 				if (TableroLab.getElemento(x + 1, y) != "*") {
 					if (TableroLab.getElemento(x + 1, y) != "E" && TableroLab.getElemento(x + 1, y) != "S") { 
-						// xAdicional = x + 1;
 						cas.push("," + y);
 						TableroLab.setElemento(x, y, "*");
 					} else {
 						if (TableroLab.getElemento(x + 1, y) == "S") {
-							// xAdicional = x + 1;
 							cas.push("," + y);
 							TableroLab.setElemento(y, "S");
 							TableroLab.setElemento(x, y, "*");
@@ -122,7 +102,7 @@ public class Laberinto {
 
 		// Ir hacia el lado derecho
 		if (reg != 1 && reg != 2) {
-			if (TableroLab.getElemento(x, y + 1) != "#") {
+			if (TableroLab.getElemento(x, y + 1) != "1") {
 				if (TableroLab.getElemento(x, y + 1) != "*") {
 					if (TableroLab.getElemento(x, y + 1) != "E" && TableroLab.getElemento(x, y + 1) != "S") {
 						cas.push(x + ",");
@@ -141,7 +121,7 @@ public class Laberinto {
 		}
 
 		// Ir hacia el lado izquierdo
-		if (TableroLab.getElemento(x, y - 1) != "#") {
+		if (TableroLab.getElemento(x, y - 1) != "1") {
 			if (TableroLab.getElemento(x, y - 1) != "*") {
 				if (TableroLab.getElemento(x, y - 1) != "E" && TableroLab.getElemento(x, y - 1) != "S") {
 					cas.push(x + ",");
@@ -159,16 +139,16 @@ public class Laberinto {
 		}
 
 		
-		if (TableroLab.getElemento(x + 1, y) == "#") {
-			if (TableroLab.getElemento(x, y - 1) == "#") { 
-				if (TableroLab.getElemento(x - 1, y) == "#") { 
+		if (TableroLab.getElemento(x + 1, y) == "1") {
+			if (TableroLab.getElemento(x, y - 1) == "1") { 
+				if (TableroLab.getElemento(x - 1, y) == "1") { 
 					if (TableroLab.getElemento(x, y + 1) == "*") { 
 						TableroLab.setElemento(x, y);
 						cas.pop();
 					}
 					
 				} else if (TableroLab.getElemento(x, y - 1)) { 
-					if (TableroLab.getElemento(x - 1, y) == "#") { 
+					if (TableroLab.getElemento(x - 1, y) == "1") { 
 						if (TableroLab.getElemento(x, y + 1) == "*") { 
 							TableroLab.setElemento(x, y,);
 							cas.pop();
@@ -190,7 +170,7 @@ public class Laberinto {
 			}
 
 		} else if (TableroLab.getElemento(x - 1, y)) { 
-			if (TableroLab.getElemento(x, y + 1) == "#") { 
+			if (TableroLab.getElemento(x, y + 1) == "1") { 
 				if (TableroLab.getElemento(x + 1, y) == "*") { 
 					TableroLab.setElemento(x, y,);
 					cas.pop();
@@ -204,7 +184,7 @@ public class Laberinto {
 			}
 
 		} else if (TableroLab.getElemento(x, y + 1)) { 
-			if (TableroLab.getElemento(x + 1, y) == "#") { 
+			if (TableroLab.getElemento(x + 1, y) == "1") { 
 				if (TableroLab.getElemento(x, y - 1) == "*") {
 					TableroLab.setElemento(x, y,);
 					cas.pop();
