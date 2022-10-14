@@ -17,7 +17,7 @@ public class Laberinto {
 		System.out.println("El laberinto es:");
 		try {
 			BufferedReader Lab = new BufferedReader(new FileReader(
-					"C:\\Users\\hp\\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\\Documents\\KARLA\\plantillas\\plantillaL.csv"));
+					"C:\\Users\\hp\\OneDrive - UNIVERSIDAD NACIONAL AUTÃ“NOMA DE MÃ‰XICO\\Documents\\KARLA\\plantillas\\plantillaL.csv"));
 			String linea = null;
 			while ((linea = Lab.readLine()) != null) {
 				String[] partes = linea.split(",");
@@ -74,38 +74,21 @@ public class Laberinto {
 		}
 	}
 
-	// kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
 	public void buscarCamino(Arreglo2D TableroLab) {
-		/*
-		 * Empezará dónde le diga la pila y solo iterará a la izquierda, derecha, abajo
-		 * o arriba en vez de un cuadrado alrededor del jugador.
-		 * 
-		 * Todos llevan un push.
-		 * 
-		 * Agregar una linea extra para el caso donde no pueda ir a ningún lado y tenga
-		 * que hacer un pop().
-		 */
-		// x es por Filas.
-		// y es por Columnas.
 		String[] sep = Pila.peek().split(",");
 		int x = Integer.parseInt(sep[0]);
 		int y = Integer.parseInt(sep[1]);
 		int reg = 0;
-		// char NO = '*';
-
-		// Ir hacia arriba
+	
 		if (reg != 1) {
 			if (TableroLab.getElemento(x - 1, y) != "#") {
-				// if (TableroLab.getElemento(x - 1, y) != null) {
 				if (TableroLab.getElemento(x - 1, y) != "*") {
 					if (TableroLab.getElemento(x - 1, y) != "E" && TableroLab.getElemento(x - 1, y) != "S") {
-						// x - 1;
 						cas.push("," + y);
 						TableroLab.setElemento(x, y, "*");
 						reg = 2;
 					} else {
 						if (TableroLab.getElemento(x - 1, y) == "S") {
-							// xAdicional = x - 1;
 							cas.push("," + y);
 							TableroLab.setElemento(y, "S");
 							TableroLab.setElemento(x, y, "*");
@@ -140,17 +123,13 @@ public class Laberinto {
 		// Ir hacia el lado derecho
 		if (reg != 1 && reg != 2) {
 			if (TableroLab.getElemento(x, y + 1) != "#") {
-				// if (TableroLab.get_Item(x, y + 1) != null) {
 				if (TableroLab.getElemento(x, y + 1) != "*") {
 					if (TableroLab.getElemento(x, y + 1) != "E" && TableroLab.getElemento(x, y + 1) != "S") {
-	
-						// yAdicional = y + 1;
 						cas.push(x + ",");
 						TableroLab.setElemento(x, y, "*");
 						reg = 3;
 					} else {
 						if (TableroLab.getElemento(x, y + 1) == "S") {
-							// yAdicional = y + 1;
 							cas.push(x + ",");
 							TableroLab.setElemento(x, "S");
 							TableroLab.setElemento(x, y, "*");
@@ -163,16 +142,13 @@ public class Laberinto {
 
 		// Ir hacia el lado izquierdo
 		if (TableroLab.getElemento(x, y - 1) != "#") {
-			// if (TableroLab.getElemento(x, y - 1) != null) {
 			if (TableroLab.getElemento(x, y - 1) != "*") {
 				if (TableroLab.getElemento(x, y - 1) != "E" && TableroLab.getElemento(x, y - 1) != "S") {
-					// yAdicional = y - 1;
 					cas.push(x + ",");
 					TableroLab.setElemento(x, y, "*");
 					reg = 1;
 				} else {
 					if (TableroLab.getElemento(x, y - 1) == "S") {
-						// yAdicional = y - 1;
 						cas.push(x + ",");
 						TableroLab.setElemento(x, "S");
 						TableroLab.setElemento(x, y, "*");
@@ -183,58 +159,58 @@ public class Laberinto {
 		}
 
 		
-		if (TableroLab.getElemento(x + 1, y) == "#") { // Abajo |
-			if (TableroLab.getElemento(x, y - 1) == "#") { // Izquierda |
-				if (TableroLab.getElemento(x - 1, y) == "#") { // Arriba |
-					if (TableroLab.getElemento(x, y + 1) == "*") { // Derecha *
+		if (TableroLab.getElemento(x + 1, y) == "#") {
+			if (TableroLab.getElemento(x, y - 1) == "#") { 
+				if (TableroLab.getElemento(x - 1, y) == "#") { 
+					if (TableroLab.getElemento(x, y + 1) == "*") { 
 						TableroLab.setElemento(x, y);
 						cas.pop();
 					}
 					
-				} else if (TableroLab.getElemento(x, y - 1)) { // Izquierda X
-					if (TableroLab.getElemento(x - 1, y) == "#") { // Arriba |
-						if (TableroLab.getElemento(x, y + 1) == "*") { // Derecha *
+				} else if (TableroLab.getElemento(x, y - 1)) { 
+					if (TableroLab.getElemento(x - 1, y) == "#") { 
+						if (TableroLab.getElemento(x, y + 1) == "*") { 
 							TableroLab.setElemento(x, y,);
 							cas.pop();
 						}
 						
-					} else if (TableroLab.getElemento(x - 1, y)) { // Arriba X
-						if (TableroLab.getElemento(x, y + 1) == "*") { // Derecha *
+					} else if (TableroLab.getElemento(x - 1, y)) { 
+						if (TableroLab.getElemento(x, y + 1) == "*") { 
 							TableroLab.setElemento(x, y,);
 							cas.pop();
 						}
 					}
 				}
 
-			} else if (TableroLab.getElemento(x, y + 1)) { // Derecha X
-				if (TableroLab.getElemento(x + 1, y) == "*") { // Abajo *
+			} else if (TableroLab.getElemento(x, y + 1)) { 
+				if (TableroLab.getElemento(x + 1, y) == "*") { 
 					TableroLab.setElemento(x, y, );
 					cas.pop();
 				}
 			}
 
-		} else if (TableroLab.getElemento(x - 1, y)) { // Arriba X
-			if (TableroLab.getElemento(x, y + 1) == "#") { // Derecha |
-				if (TableroLab.getElemento(x + 1, y) == "*") { // Abajo *
+		} else if (TableroLab.getElemento(x - 1, y)) { 
+			if (TableroLab.getElemento(x, y + 1) == "#") { 
+				if (TableroLab.getElemento(x + 1, y) == "*") { 
 					TableroLab.setElemento(x, y,);
 					cas.pop();
 				}
 
-			} else if (TableroLab.getElemento(x + 1, y)) { // Abajo X
-				if (TableroLab.getElemento(x, y - 1) == "*") { // Izquierda *
+			} else if (TableroLab.getElemento(x + 1, y)) { 
+				if (TableroLab.getElemento(x, y - 1) == "*") { 
 					TableroLab.setElemento(x, y,);
 					cas.pop();
 				}
 			}
 
-		} else if (TableroLab.getElemento(x, y + 1)) { // Derecha X
-			if (TableroLab.getElemento(x + 1, y) == "#") { // Abajo |
-				if (TableroLab.getElemento(x, y - 1) == "*") { // Izquierda *
+		} else if (TableroLab.getElemento(x, y + 1)) { 
+			if (TableroLab.getElemento(x + 1, y) == "#") { 
+				if (TableroLab.getElemento(x, y - 1) == "*") {
 					TableroLab.setElemento(x, y,);
 					cas.pop();
 				}
-			} else if (TableroLab.getElemento(x, y - 1)) { // Izquierda X
-				if (TableroLab.getElemento(x - 1, y) == "*") { // Arriba *
+			} else if (TableroLab.getElemento(x, y - 1)) { 
+				if (TableroLab.getElemento(x - 1, y) == "*") { 
 					TableroLab.setElemento(x, y,);
 					cas.pop();
 
