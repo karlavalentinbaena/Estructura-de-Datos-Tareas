@@ -12,12 +12,12 @@ public class ADTColas<T> {
 		this.cola = new ListaLigadaADT();
 	}
 
-	// 2.¿Está vacía?
+	// 2.Â¿EstÃ¡ vacÃ­a?
 	public boolean estaVacia() {
 		return this.cola.estaVacia();
 	}
 
-	// 3. Número de elementos en la cola.
+	// 3. NÃºmero de elementos en la cola.
 	public int getTamanio() {
 		return this.cola.getTamanio();
 	}
@@ -35,14 +35,14 @@ public class ADTColas<T> {
 
 	}
 
-	// 6. También opcional para mostrar el estado actual de la cola.
+	// 6. TambiÃ©n opcional para mostrar el estado actual de la cola.
 	public void transversal() {
 		this.cola.transversal();
 	}
 
 	@Override
 	public String toString() {
-		return "Cola_ADT{" + "cola=" + (T) cola + '}';
+		return "Cola{" + "cola=" + (T) cola + '}';
 	}
 
 	public static void main(String[] args) {
