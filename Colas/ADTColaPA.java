@@ -2,11 +2,11 @@ package listaSimpleLigada;
 
 public class ADTColaPA<T> {
 	ArregloADT<ADTColas> ColaP;
-    int prioridad;
+        int pri;
 
     public ADTColaPA(int pri) {
     	ColaP = new ArregloADT(pri);
-        this.prioridad = pri;
+        this.pri= pri;
         for (int F = 0; F < pri; F++) {
         	ColaP.setElemento(pri, null);
         }
@@ -14,7 +14,7 @@ public class ADTColaPA<T> {
 
     public boolean estaVacia() {
         int elem = 0;
-        for (int i = 0; i < prioridad - 1; i++) {
+        for (int i = 0; i < pri - 1; i++) {
             if (ColaP.getElemento(i).estaVacia()) {
                 elem++;
             }
@@ -25,23 +25,23 @@ public class ADTColaPA<T> {
     public int getTamanio() {
         int tam = 0;
         ADTColas el;
-        for (int i = 0; i < prioridad - 1; i++) {
+        for (int i = 0; i < pri - 1; i++) {
             el = ColaP.getElemento(i);
             tam += el.getTamanio();
         }
         return tam;
     }
 
-    public void enqueue(int Prioridad, T val) {
-        if (Prioridad >= 0 && Prioridad < prioridad) {
-            ColaP.getElemento(Prioridad).enqueue(val);
-        } else if (Prioridad > prioridad) {
-            ColaP.getElemento(prioridad - 1).enqueue(val);
+    public void enqueue(int Pri, T val) {
+        if (Pri >= 0 && Pri < pri) {
+            ColaP.getElemento(Pri).enqueue(val);
+        } else if (Pri > pri) {
+            ColaP.getElemento(pri - 1).enqueue(val);
         }
     }
 
     public void dequeue() {
-        for (int j = 0; j < prioridad; j++) {
+        for (int j = 0; j < pri; j++) {
             if (!ColaP.getElemento(j).estaVacia()) {
                 ColaP.getElemento(j).dequeue();
                 break;
@@ -50,7 +50,7 @@ public class ADTColaPA<T> {
     }
 
     public void transversal() {
-        for (int i = 0; i < prioridad; i++) {
+        for (int i = 0; i < pri; i++) {
             System.out.print("Prioridad " + i + " ");
             ColaP.getElemento(i).transversal();
         }
@@ -58,21 +58,21 @@ public class ADTColaPA<T> {
 
     @Override
     public String toString() {
-        return "ColaP{" + "ColaPri=" + ColaP.toString() + '}';
+        return "ColaP{" + "ColaPrioridad=" + ColaP.toString() + '}';
     }
 
     public static void main(String[] args) {
-    	ADTColaPA ColPrio = new ADTColaPA(6);
+    	ADTColaPA ColPrio = new ADTColaPA(6); //Cola tamaño 7
     	ColPrio.enqueue(4, "Maestre");
-    	ColPrio.enqueue(2, "Ni�os");
-    	ColPrio.enqueue(4, "Mec�nico");
+    	ColPrio.enqueue(2, "Niños");
+    	ColPrio.enqueue(4, "Mecánico");
     	ColPrio.enqueue(3, "Hombres");
-    	ColPrio.enqueue(4, "Vig�a");
-    	ColPrio.enqueue(5, "Capit�n");
+    	ColPrio.enqueue(4, "Vigía");
+    	ColPrio.enqueue(5, "Capitán");
     	ColPrio.enqueue(4, "Timonel");
     	ColPrio.enqueue(3, "Mujeres");
     	ColPrio.enqueue(2, "3ra Edad");
-    	ColPrio.enqueue(1, "Ni�as");
+    	ColPrio.enqueue(1, "Niñas");
     	ColPrio.transversal();
     
     }
