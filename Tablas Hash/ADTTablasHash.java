@@ -30,22 +30,22 @@ public class ADTTablasHash<T> {
     }
 
     public void agregarE(int llave, T valor) {
-        int posición = llave % tam;
-        TabHash.getElemento(posición).add(valor);
+        int posiciÃ³n = llave % tam;
+        TabHash.getElemento(posiciÃ³n).add(valor);
     }
 
     public T valor(int llave) {
-        int posición = llave % tam;
-        Object fi=null;
+        int posiciÃ³n = llave % tam;
+        Object fi;
         Object enc = null;
 
-        if (TabHash.getElemento(posición).size() == 1) {
-            return (T) TabHash.getElemento(posición).get(0);
+        if (TabHash.getElemento(posiciÃ³n).size() == 1) {
+            return (T) TabHash.getElemento(posiciÃ³n).get(0);
         } else {       
-            for (int j = 0; j < TabHash.getElemento(posición).size(); j++) {
-                if (TabHash.getElemento(posición).get(j).equals(fi)) {
-                    enc = TabHash.getElemento(posición).get(j);
-                    System.out.println("Está en: " + j);
+            for (int j = 0; j < TabHash.getElemento(posiciÃ³n).size(); j++) {
+                if (TabHash.getElemento(posiciÃ³n).get(j).equals(fi)) {
+                    enc = TabHash.getElemento(posiciÃ³n).get(j);
+                    System.out.println("EstÃ¡ en: " + j);
                 }
             }
         
@@ -54,14 +54,14 @@ public class ADTTablasHash<T> {
     }
 
     public void eliminar(int llave) {
-        int posición = llave % tam;
+        int posiciÃ³n = llave % tam;
         Object fi;
-        if (TabHash.getElemento(posición).size() == 1) {
-        	TabHash.getElemento(posición).remove(0);
+        if (TabHash.getElemento(posiciÃ³n).size() == 1) {
+        	TabHash.getElemento(posiciÃ³n).remove(0);
         } else {
-            for (int j = 0; j < TabHash.getElemento(posición).size(); j++) {
-                //if (TabHash.getElemento(posición).get(j).equals(fi)) {
-                	TabHash.getElemento(posición).remove(j);
+            for (int j = 0; j < TabHash.getElemento(posiciÃ³n).size(); j++) {
+                //if (TabHash.getElemento(posiciÃ³n).get(j).equals(fi)) {
+                	TabHash.getElemento(posiciÃ³n).remove(j);
                 }
             }
         }
