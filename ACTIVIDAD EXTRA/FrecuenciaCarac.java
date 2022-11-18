@@ -7,309 +7,302 @@ import java.io.IOException;
 
 public class FrecuenciaCarac {
 	public static void main(String[] args) {
-		int contador = 0;
-		char letractual;
-		int contador_a = 0;
-		int contador_b = 0;
-		int contador_c = 0;
-		int contador_d = 0;
-		int contador_e = 0;
-		int contador_f = 0;
-		int contador_g = 0;
-		int contador_h = 0;
-		int contador_i = 0;
-		int contador_j = 0;
-		int contador_k = 0;
-		int contador_l = 0;
-		int contador_m = 0;
-		int contador_n = 0;
-		int contador_� = 0;
-		int contador_o = 0;
-		int contador_p = 0;
-		int contador_q = 0;
-		int contador_r = 0;
-		int contador_s = 0;
-		int contador_t = 0;
-		int contador_u = 0;
-		int contador_v = 0;
-		int contador_w = 0;
-		int contador_x = 0;
-		int contador_y = 0;
-		int contador_z = 0;
-		// may�sculas
-		int contador_A = 0;
-		int contador_B = 0;
-		int contador_C = 0;
-		int contador_D = 0;
-		int contador_E = 0;
-		int contador_F = 0;
-		int contador_G = 0;
-		int contador_H = 0;
-		int contador_I = 0;
-		int contador_J = 0;
-		int contador_K = 0;
-		int contador_L = 0;
-		int contador_M = 0;
-		int contador_N = 0;
-		int contador_� = 0;
-		int contador_O = 0;
-		int contador_P = 0;
-		int contador_Q = 0;
-		int contador_R = 0;
-		int contador_S = 0;
-		int contador_T = 0;
-		int contador_U = 0;
-		int contador_V = 0;
-		int contador_W = 0;
-		int contador_X = 0;
-		int contador_Y = 0;
-		int contador_Z = 0;
+		int let = 0;
+		char actualizada;
+		int let_a = 0;
+		int let_b = 0;
+		int let_c = 0;
+		int let_d = 0;
+		int let_e = 0;
+		int let_f = 0;
+		int let_g = 0;
+		int let_h = 0;
+		int let_i = 0;
+		int let_j = 0;
+		int let_k = 0;
+		int let_l = 0;
+		int let_m = 0;
+		int let_n = 0;
+		int let_ñ = 0;
+		int let_o = 0;
+		int let_p = 0;
+		int let_q = 0;
+		int let_r = 0;
+		int let_s = 0;
+		int let_t = 0;
+		int let_u = 0;
+		int let_v = 0;
+		int let_w = 0;
+		int let_x = 0;
+		int let_y = 0;
+		int let_z = 0;
+		int let_A = 0;
+		int let_B = 0;
+		int let_C = 0;
+		int let_D = 0;
+		int let_E = 0;
+		int let_F = 0;
+		int let_G = 0;
+		int let_H = 0;
+		int let_I = 0;
+		int let_J = 0;
+		int let_K = 0;
+		int let_L = 0;
+		int let_M = 0;
+		int let_N = 0;
+		int let_Ñ = 0;
+		int let_O = 0;
+		int let_P = 0;
+		int let_Q = 0;
+		int let_R = 0;
+		int let_S = 0;
+		int let_T = 0;
+		int let_U = 0;
+		int let_V = 0;
+		int let_W = 0;
+		int let_X = 0;
+		int let_Y = 0;
+		int let_Z = 0;
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(
-					"C:\\Users\\hp\\OneDrive - UNIVERSIDAD NACIONAL AUT�NOMA DE M�XICO\\Documents\\KARLA\\Estructura de datos\\el_quijote.txt"));
-			System.out.println("TEXTO LEIDO");
+					"C:\\Users\\hp\\OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO\\Documents\\KARLA\\Estructura de datos\\el_quijote.txt"));
 			System.out.println("----- -----\n");
 
-			String linea = br.readLine();
+			String linea = li.readLine();
 			while (linea != null) {
 				System.out.println(linea);
-				for (int contadorl�nea = 0; contadorl�nea < linea.length(); contadorl�nea++) {
+				for (int i = 0; i < i.length(); i++) {
 
-					letractual = linea.charAt(contadorl�nea);
+					actualizada = linea.charAt(i);
 
-					if (letractual == 'a') {
+					if (actualizada  == 'a') {
 						contador_a++;
 					}
-					if (letractual == 'b') {
+					if (actualizada  == 'b') {
 						contador_b++;
 					}
-					if (letractual == 'c') {
+					if (actualizada  == 'c') {
 						contador_c++;
 					}
-					if (letractual == 'd') {
+					if (actualizada  == 'd') {
 						contador_d++;
 					}
-					if (letractual == 'e') {
+					if (actualizada  == 'e') {
 						contador_e++;
 					}
-					if (letractual == 'f') {
+					if (actualizada  == 'f') {
 						contador_f++;
 					}
-					if (letractual == 'g') {
+					if (actualizada  == 'g') {
 						contador_g++;
 					}
-					if (letractual == 'h') {
+					if (actualizada  == 'h') {
 						contador_h++;
 					}
-					if (letractual == 'i') {
+					if (actualizada  == 'i') {
 						contador_i++;
 					}
-					if (letractual == 'j') {
+					if (actualizada  == 'j') {
 						contador_j++;
 					}
-					if (letractual == 'k') {
+					if (actualizada  == 'k') {
 						contador_k++;
 					}
-					if (letractual == 'l') {
+					if (actualizada  == 'l') {
 						contador_l++;
 					}
-					if (letractual == 'm') {
+					if (actualizada  == 'm') {
 						contador_m++;
 					}
-					if (letractual == 'n') {
+					if (actualizada  == 'n') {
 						contador_n++;
 					}
-					if (letractual == '�') {
-						contador_�++;
+					if (actualizada  == 'ñ') {
+						contador_ñ++;
 					}
-					if (letractual == 'o') {
+					if (actualizada  == 'o') {
 						contador_o++;
 					}
-					if (letractual == 'p') {
+					if (actualizada  == 'p') {
 						contador_p++;
 					}
-					if (letractual == 'q') {
+					if (actualizada  == 'q') {
 						contador_q++;
 					}
-					if (letractual == 'r') {
+					if (actualizada  == 'r') {
 						contador_r++;
 					}
-					if (letractual == 's') {
+					if (actualizada  == 's') {
 						contador_s++;
 					}
-					if (letractual == 't') {
+					if (actualizada  == 't') {
 						contador_t++;
 					}
-					if (letractual == 'u') {
+					if (actualizada  == 'u') {
 						contador_u++;
 					}
-					if (letractual == 'v') {
+					if (actualizada  == 'v') {
 						contador_v++;
 					}
-					if (letractual == 'w') {
+					if (actualizada  == 'w') {
 						contador_w++;
 					}
-					if (letractual == 'x') {
+					if (actualizada  == 'x') {
 						contador_x++;
 					}
-					if (letractual == 'y') {
+					if (actualizada  == 'y') {
 						contador_y++;
 					}
 					if (letractual == 'z') {
 						contador_z++;
 					}
 
-					// may�sculas
-
-					if (letractual == 'A') {
+					if (actualizada  == 'A') {
 						contador_A++;
 					}
-					if (letractual == 'B') {
+					if (actualizada  == 'B') {
 						contador_B++;
 					}
-					if (letractual == 'C') {
+					if (actualizada  == 'C') {
 						contador_C++;
 					}
-					if (letractual == 'D') {
+					if (actualizada  == 'D') {
 						contador_D++;
 					}
-					if (letractual == 'E') {
+					if (actualizada  == 'E') {
 						contador_E++;
 					}
-					if (letractual == 'F') {
+					if (actualizada  == 'F') {
 						contador_F++;
 					}
-					if (letractual == 'G') {
+					if (actualizada  == 'G') {
 						contador_G++;
 					}
-					if (letractual == 'H') {
+					if (actualizada  == 'H') {
 						contador_H++;
 					}
-					if (letractual == 'I') {
+					if (actualizada  == 'I') {
 						contador_I++;
 					}
-					if (letractual == 'J') {
+					if (actualizada  == 'J') {
 						contador_J++;
 					}
-					if (letractual == 'K') {
+					if (actualizada  == 'K') {
 						contador_K++;
 					}
-					if (letractual == 'L') {
+					if (actualizada  == 'L') {
 						contador_L++;
 					}
-					if (letractual == 'M') {
+					if (actualizada  == 'M') {
 						contador_M++;
 					}
-					if (letractual == 'N') {
+					if (actualizada  == 'N') {
 						contador_N++;
 					}
-					if (letractual == '�') {
-						contador_�++;
+					if (actualizada  == 'Ñ') {
+						contador_Ñ++;
 					}
-					if (letractual == 'O') {
+					if (actualizada  == 'O') {
 						contador_O++;
 					}
-					if (letractual == 'P') {
+					if (actualizada  == 'P') {
 						contador_P++;
 					}
-					if (letractual == 'Q') {
+					if (actualizada  == 'Q') {
 						contador_Q++;
 					}
-					if (letractual == 'R') {
+					if (actualizada  == 'R') {
 						contador_R++;
 					}
-					if (letractual == 'S') {
+					if (actualizada  == 'S') {
 						contador_S++;
 					}
-					if (letractual == 'T') {
+					if (actualizada  == 'T') {
 						contador_T++;
 					}
-					if (letractual == 'U') {
+					if (actualizada  == 'U') {
 						contador_U++;
 					}
-					if (letractual == 'V') {
+					if (actualizada  == 'V') {
 						contador_V++;
 					}
-					if (letractual == 'W') {
+					if (actualizada  == 'W') {
 						contador_W++;
 					}
-					if (letractual == 'X') {
+					if (actualizada  == 'X') {
 						contador_X++;
 					}
-					if (letractual == 'Y') {
+					if (actualizada == 'Y') {
 						contador_Y++;
 					}
-					if (letractual == 'Z') {
+					if (actualizada  == 'Z') {
 						contador_Z++;
 					}
 
 				}
-				linea = br.readLine();
-				System.out.println("l�nea terminada");
+				linea = li.readLine();
 			}
-			br.close();
+			li.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		System.out.println("Número de caracter a encontrados:" + let_a);
+		System.out.println("Número de caracter b encontrados:" + let_b);
+		System.out.println("Número de caracter c encontrados:" + let_c);
+		System.out.println("Número de caracter d encontrados: " + let_d);
+		System.out.println("Número de caracter e encontrados: " + let_e);
+		System.out.println("Número de caracter f encontrados:" + let_f);
+		System.out.println("Número de caracter g encontrados:" + let_g);
+		System.out.println("Número de caracter h encontrados:" + let_h);
+		System.out.println("Número de caracter i encontrados: " + let_i);
+		System.out.println("Número de caracter j encontrados:" + let_j);
+		System.out.println("Número de caracter k encontrados: " + let_k);
+		System.out.println("Número de caracter l encontrados:" + let_l);
+		System.out.println("Número de caracter m encontrados:" + let_m);
+		System.out.println("Número de caracter n encontrados:" + let_n);
+		System.out.println("Número de caracter ñ encontrados:" + let_ñ);
+		System.out.println("Número de caracter o encontrados:" + let_o);
+		System.out.println("Número de caracter p encontrados:" + let_p);
+		System.out.println("Número de caracter q encontrados:" + let_q);
+		System.out.println("Número de caracter r encontrados:" + let_r);
+		System.out.println("Número de caracter s encontrados: " + let_s);
+		System.out.println("Número de caracter t encontrados: " + let_t);
+		System.out.println("Número de caracter u encontrados:" + let_u);
+		System.out.println("Número de caracter v encontrados:" + let_v);
+		System.out.println("Número de caracter w encontrados:" + let_w);
+		System.out.println("Número de caracter x encontrados:" + let_x);
+		System.out.println("Número de caracter y encontrados:" + let_y);
+		System.out.println("Número de caracter z encontrados:" + let_z);
 
-		//System.out.println("\nPalabras contadas: " + contador);
-		System.out.println("caracter a contados: " + contador_a);
-		System.out.println("caracter b contados: " + contador_b);
-		System.out.println("caracter c contados: " + contador_c);
-		System.out.println("caracter d contados: " + contador_d);
-		System.out.println("caracter e contados: " + contador_e);
-		System.out.println("caracter f contados: " + contador_f);
-		System.out.println("caracter g contados: " + contador_g);
-		System.out.println("caracter h contados: " + contador_h);
-		System.out.println("caracter i contados: " + contador_i);
-		System.out.println("caracter j contados: " + contador_j);
-		System.out.println("caracter k contados: " + contador_k);
-		System.out.println("caracter l contados: " + contador_l);
-		System.out.println("caracter m contados: " + contador_m);
-		System.out.println("caracter n contados: " + contador_n);
-		System.out.println("caracter � contados: " + contador_�);
-		System.out.println("caracter o contados: " + contador_o);
-		System.out.println("caracter p contados: " + contador_p);
-		System.out.println("caracter q contados: " + contador_q);
-		System.out.println("caracter r contados: " + contador_r);
-		System.out.println("caracter s contados: " + contador_s);
-		System.out.println("caracter t contados: " + contador_t);
-		System.out.println("caracter u contados: " + contador_u);
-		System.out.println("caracter v contados: " + contador_v);
-		System.out.println("caracter w contados: " + contador_w);
-		System.out.println("caracter x contados: " + contador_x);
-		System.out.println("caracter y contados: " + contador_y);
-		System.out.println("caracter z contados: " + contador_z);
-		// mayus
-		System.out.println("caracter A contados: " + contador_A);
-		System.out.println("caracter B contados: " + contador_B);
-		System.out.println("caracter C contados: " + contador_C);
-		System.out.println("caracter D contados: " + contador_D);
-		System.out.println("caracter E contados: " + contador_E);
-		System.out.println("caracter F contados: " + contador_F);
-		System.out.println("caracter G contados: " + contador_G);
-		System.out.println("caracter H contados: " + contador_H);
-		System.out.println("caracter I contados: " + contador_I);
-		System.out.println("caracter J contados: " + contador_J);
-		System.out.println("caracter K contados: " + contador_K);
-		System.out.println("caracter L contados: " + contador_L);
-		System.out.println("caracter M contados: " + contador_M);
-		System.out.println("caracter N contados: " + contador_N);
-		System.out.println("caracter � contados: " + contador_�);
-		System.out.println("caracter O contados: " + contador_O);
-		System.out.println("caracter P contados: " + contador_P);
-		System.out.println("caracter Q contados: " + contador_Q);
-		System.out.println("caracter R contados: " + contador_R);
-		System.out.println("caracter S contados: " + contador_S);
-		System.out.println("caracter T contados: " + contador_T);
-		System.out.println("caracter U contados: " + contador_U);
-		System.out.println("caracter V contados: " + contador_V);
-		System.out.println("caracter W contados: " + contador_W);
-		System.out.println("caracter X contados: " + contador_X);
-		System.out.println("caracter Y contados: " + contador_Y);
-		System.out.println("caracter Z contados: " + contador_Z);
+		System.out.println("Número de caracter A encontrados:" + let_A);
+		System.out.println("Número de caracter B encontrados:" + let_B);
+		System.out.println("Número de caracter C encontrados: " + let_C);
+		System.out.println("Número de caracter D encontrados:" + let_D);
+		System.out.println("Número de caracter E encontrados: " + let_E);
+		System.out.println("Número de caracter F encontrados: " + let_F);
+		System.out.println("Número de caracter G encontrados:" + let_G);
+		System.out.println("Número de caracter H encontrados: " + let_H);
+		System.out.println("Número de caracter I encontrados: " + let_I);
+		System.out.println("Número de caracter J encontrados:" + let_J);
+		System.out.println("Número de caracter K encontrados:" + let_K);
+		System.out.println("Número de caracter L encontrados:" + let_L);
+		System.out.println("Número de caracter M encontrados:" + let_M);
+		System.out.println("Número de caracter N encontrados:" + let_N);
+		System.out.println("Número de caracter Ñ encontrados: " + let_Ñ);
+		System.out.println("Número de caracter O encontrados:" + let_O);
+		System.out.println("Número de caracter P encontrados:" + let_P);
+		System.out.println("Número de caracter Q encontrados:" + let_Q);
+		System.out.println("Número de caracter R encontrados: " + let_R);
+		System.out.println("Número de caracter S encontrados:" + let_S);
+		System.out.println("Número de caracter T encontrados:" + let_T);
+		System.out.println("Número de caracter U encontrados:" + let_U);
+		System.out.println("Número de caracter V encontrados:" + let_V);
+		System.out.println("Número de caracter W encontrados: " + let_W);
+		System.out.println("Número de caracter X encontrados:" + let_X);
+		System.out.println("Número de caracter Y encontrados:" + let_Y);
+		System.out.println("Número de caracter Z encontrados: " + let_Z);
 
 	}
 
