@@ -4,8 +4,6 @@ package listaSimpleLigada;
 
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
-
 public class ADTTablasHash<T> {
 	ArregloADT<ArrayList> TabHash;
     int tam;
